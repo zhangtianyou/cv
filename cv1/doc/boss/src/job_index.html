@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		  <script src="js/jquery-3.1.1.js"></script>
+		  <script src="js/iScroll.js"></script>
+		 <!--<script src="js/job_index.js" type="text/javascript"></script>-->
+		 <!--首页tab切换-->
+		 <script src="js/style.js" type="text/javascript"></script>
+		 <link rel="stylesheet" href="css/font-awesome.css" />
+		 <link rel="stylesheet" href="css/style.css"  />
+	</head>
+	<body>
+		<!-----------首页----------->
+		<div class="jobb_wrap">
+			<div class="jobb_header">
+					<a href="javascript:;" onclick="javascript:history.back(-1);" class="jobb_prev"><img src="images/pre_03.png"/></a>
+					<a href="job_index.html" class="jobb_all">全部</a>
+					<a href="joba_me.html" class="jobb_me">我的</a>
+			</div>
+		  <!--tab选项卡-->
+			<div class="jobb_tab" id="jobk_tab">
+				<div id="jobk_bbox">
+					<div class="jobb_recom">
+						<a href="#">推荐<i class="fa fa-angle-down"></i></a>
+					</div>
+					<div class="jobb_recom">
+						<a href="#">
+							<i class="jobb_add"><img src="images/address_03.png"/>
+							</i>北京<i class="fa fa-angle-down"></i>
+						</a>
+					</div>
+					<div class="jobb_recom">
+						<a href="#">薪资<i class="fa fa-angle-down"></i></a>
+					</div>
+				</div>
+				<div id="jobk_dropList">
+					<ul class="jobk_dropDown jobk_dropDownL">
+						<li class="jobk_active">
+							<p>推荐<span>√</span></p>
+						</li>
+						<li>
+							<p>最新<span>√</span></p>
+						</li>
+					</ul>
+					<ul class="jobk_dropDown jobk_dropDownC">
+						<!--地区放在这里-->
+						<div id="region" class="jobc_region">
+							<ul class="jobc_city"></ul>
+							<div class="area_box"></div>
+						</div>
+					</ul>
+					<ul class="jobk_dropDown jobk_dropDownR">
+						<li class="jobk_active">
+							<p>由高到低<span>√</span></p>
+						</li>
+						<li>
+							<p>由低到高<span>√</span></p>
+						</li>
+						<li>
+							<p>面议<span>√</span></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--模态层-->
+			<div class="jobk_modal" id="jobk_modal"></div>
+			<!--tab选项卡结束-->
+
+			<!--职位列表-->
+			<div id="wrapper">
+				<div class="jobb_list" id="scroller">
+					
+					<!--上划加载更多-->
+					<div id="pullUp">
+						<span class="pullUpLabel">上拉加载更多...</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--——————————详情页面——————————-->
+		<div class="jobd-detail">
+			<div class="jobb_header">
+				<header>
+					<div class="title">职位详情
+						<a href="javascript:;" id="d_back"><i><img src="images/arrow.png" alt="" /></i></a>
+					</div>
+				</header>
+			</div>
+			<section>
+				<div class="item top">
+					<div class="title">
+						<h3 class="major"></h3>
+						<span class="pay"></span>
+					</div>
+					<p class="subtitle"></p>
+					<div class="desc">
+						<span class="point"></span>
+						<span class="bag"></span>
+					</div>
+					
+				</div>
+				<div class="item mid">
+					<h3>职位要求</h3>
+					<div class="list">
+					</div>
+				</div>
+				<div class="item bot">
+					<h3>公司介绍</h3>
+					<div class="desc">
+						<div class="pic"><img class="picImg"></div>
+						<div class="text">
+							<p class="company"></p>
+							<span class="insize"></span>
+						</div>
+						<i class="inset"><img src="images/arrow-r.png" alt="" /></i>
+					</div>
+					<div class="list"></div>
+					
+				</div>
+					<div class="right" id='order'>预约</div>
+					
+				<!--预约的发送状态-->
+					<div id="jobe-modal">
+							<div class="waiting show">
+								<div class="pic"></div>
+								<p class="hint">正在发送</p>
+								<p class="desc">岗位预订信息正在抓紧发送中</p>
+								<p class="close">×</p>
+							</div>
+							<div class="success show">
+								<div class="pic"></div>
+								<p class="hint">预约成功</p>
+								<p class="desc">请保持电话畅通<br/>就业老师会在48小时内与你联系</p>
+								<p class="close">×</p>
+							</div>
+							
+							<div class="wrong show">
+								<div class="pic"></div>
+								<p class="hint">预约失败</p>
+								<p class="desc">请检查您的网络连接是否正常</p>
+								<p class="close">×</p>
+						</div>
+	              </div>
+<!--------------------------------------推荐与继续预约——----------------------------------->
+			<div class="jobh_chance">
+				<div class="model"></div>
+				<div class="content">
+					<span>3</span>
+					<p>同学你好,还有3次投递机会<br>建议查看教师推荐机会</p>
+
+					<div class="button1">查看推荐</div>
+					<div class="button2">继续预约</div>
+				</div>
+			</div>
+			</section>
+<!--------------------------------------公司详情——----------------------------------->
+			<div id="jobg_explain" class="jobg_explain">
+			<div class="jobg_Box">
+				<div class="company_id">
+					<span class="close">×</span>
+					<div class="company_card">
+						<div class="company_logo"><img src="images/logo.png"/></div>
+						<div class="company_instruct">
+							<span class="name">特别厉害的公司</span>
+							<span class="teacher_name">张老师电话：</span>
+							<span class="tel_num">138-1111-2222</span>
+							<br />
+							<p class="com_type">互联网</p>
+							<p class="financing">未融资</p>
+							<p class="staff">20-30人</p>
+						</div>
+					</div>
+				</div>
+				<div class="position_intro">
+					<h2>职位介绍</h2>
+					<ul class="require_list">
+						<li>1.统招本科及以上学历，至少5年以上设计工作经验</li>
+						<li>2.有iOS平台和Android平台相关设计作业或相关设计经验</li>
+						<li>3.具有丰富的图标设计经验及相关成熟作品</li>
+						<li>4.了解产品开发流程，有一定的交互设计经验者优先。</li>
+						<li>5.熟练使用Photoshop、IIIustrator、ARP、AE</li>
+						<li>6.对教师行业感兴趣</li>
+					</ul>
+				</div>
+				<div class="company_intro">
+					<h2>公司概况</h2>
+					<ul class="company_list">
+						<li>1.统招本科及以上学历，至少5年以上设计工作经验</li>
+						<li>2.有iOS平台和Android平台相关设计作业或相关设计经验</li>
+						<li>3.具有丰富的图标设计经验及相关成熟作品</li>
+						<li>4.了解产品开发流程，有一定的交互设计经验者优先。</li>
+						<li>5.熟练使用Photoshop、IIIustrator、ARP、AE</li>
+						<li>6.对教师行业感兴趣</li>
+					</ul>
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+	
+	
+	<script>
+		//设置动态获取屏幕宽度，实现响应的rem
+		var html=document.documentElement;
+	    var hW=html.getBoundingClientRect().width;
+	           html.style.fontSize=hW/18+'px';
+	            //1rem=40px
+		//mengqiannan        
+		var Olist=document.getElementById('scroller');
+		var mainBox=document.getElementsByClassName('jobb_wrap')[0];
+		var detail=document.getElementsByClassName('jobd-detail')[0];
+		//获取数据————————————————————————————杨
+		var data=[];
+		$.ajaxSettings.async=false;
+		$.ajax({url: "data.json",type:"GET",success: function(listData){
+				data=listData.data;
+				user=listData.user;
+			}
+		});
+		//获取数据————————————————————————————杨——闭合
+	
+		//循环显示列表
+		var list_num=6;//每页最多显示六条信息
+		var show_now=[];
+		var page_num=1;
+		show_now=data.slice(0,list_num);
+		
+		var brecm_imgSrc="images/icon_06.png";
+		var jobb_heartSrc="images/icon_03.png";
+		
+		function add_to_lists(){
+			Olist.innerHTML="";
+			for(var i=0;i<show_now.length;i++){      
+			
+				var brecm_img=(data[i].brecm_img)? '<i class="fl"><img src='+brecm_imgSrc+'/></i>' : '';
+				
+				var jobb_heart=(data[i].jobb_heart)? '<i class="fl jobb_hearts"><img src='+jobb_heartSrc+'/></i>' :'<i class="fl jobb_hearts hide"><img src='+jobb_heartSrc+'/></i>';
+				
+				var Odiv='<div class="jobb_item" ids='+data[i].id+'>'+
+			                '<div class="jobb_title clearfix">'+
+		                        '<h1 class="fl">'+data[i].jobb_post+'</h1>'+
+		                        brecm_img+
+		                        jobb_heart+
+		                        '<span class="fr jobb_money">'+data[i].jobb_money+'</span>'+
+			                '</div>'+
+			                '<div class="jobb_desc clearfix">'+
+		                        '<p>'+data[i].jobb_desc+'</p>'+
+		                        '<div class="jobb_city clearfix">'+
+		                        '<i class="fl"><img src="images/adds_03.png"/></i>'+
+		                        '<span class="fl">'+data[i].citys+'</span>'+
+		                        '<span class="fl">'+data[i].areas+'</span>'+
+		                        '<span class="fl">'+data[i].village+'</span>'+
+		                        '<i class="fl jobb_experience"><img src="images/guan_03.png"/></i>'+
+		                        '<span class="fl">'+data[i].experience+'</span>'+
+			                '</div>'+
+			                    '<a href="#" class="jobb_attent">关注</a>'+
+			                '</div>'+
+			                '<div class="jobb_new"><img src="'+data[i].newIcon+'"/></div>'+
+			             '</div>';
+				//添加到内容的列表盒子里
+				Olist.innerHTML+=Odiv;
+			}
+			if(page_num*list_num>=data.length){
+				var pull_up_to_more='<div id="pullUp"><span class="pullUpLabel">已经是最后一页了...</span></div>';
+				Olist.innerHTML+=pull_up_to_more;
+			}else{
+				var pull_up_to_more='<div id="pullUp"><span class="pullUpLabel">上拉加载更多...</span></div>';
+				Olist.innerHTML+=pull_up_to_more;}
+			
+		}
+		add_to_lists();
+		
+	   //----------------上划加载事件开始！！！------------------------------------
+			var myScroll,
+				pullUpEl, pullUpOffset,
+				generatedCount = 0;
+			//上划事件完成后执行的函数
+			function pullUpAction() {
+				setTimeout(function() {
+					page_num++;
+					show_now = data.slice(0, page_num * list_num);
+					add_to_lists();
+					myScroll.refresh();
+					add_events();
+				}, 1000);
+			}
+	
+			//------事件函数
+			function loaded() {
+	
+				pullUpEl = document.getElementById('pullUp');
+				pullUpOffset = pullUpEl.offsetHeight;
+	
+				myScroll = new iScroll('wrapper', {
+					scrollbarClass: 'myScrollbar',
+					useTransition: false,
+					onRefresh: function() {
+						if(pullUpEl.className.match('loading')) {
+							pullUpEl.className = '';
+							if(page_num*list_num>=data.length){
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = '已经是最后一页了...';
+							}else{
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+							}		
+						}
+					},
+					onScrollMove: function() {
+						if(this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+							pullUpEl.className = 'flip';
+							pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+							this.maxScrollY = this.maxScrollY;
+						} else if(this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+							pullUpEl.className = '';
+							pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+							this.maxScrollY = pullUpOffset;
+						}
+					},
+					onScrollEnd: function() {
+						if(pullUpEl.className.match('flip')) {
+							pullUpEl.className = 'loading';
+							pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+							pullUpAction(); // Execute custom function (ajax call?)
+						}
+					}
+				});
+				setTimeout(function() {
+					document.getElementById('wrapper').style.left = '0';
+				}, 800);
+			}
+			//初始化绑定iScroll控件 
+			document.addEventListener('touchmove', function(e) {
+				e.preventDefault();
+			}, false);
+			document.addEventListener('DOMContentLoaded', loaded, false);
+			//----------------上划加载事件结束！！！------------------------------------
+	   
+	   
+	   	
+	    
+	   function add_events(){
+	   		var items=Olist.getElementsByClassName('jobb_item');
+	   		
+		    for(var i=0;i<items.length;i++){
+		    	items[i].index=i;
+		    	items[i].addEventListener("click",function(ev){
+		    		
+		    		var ev=ev||event;
+		    		var elm=ev.target||ev.srcElement;
+		    		
+		    		var items=Olist.getElementsByClassName('jobb_item');
+		    		
+		    		if(elm.className=="jobb_attent" || elm.className=="jobb_attention"){
+		    			/*此处写加关注事件-------*/
+		    		    //如果点击关注显示心形图标，关注--取消关注、取消关注--关注、new图标消失
+		    		    var heartShow=this.getElementsByClassName("jobb_hearts")[0];
+		    		    var attend=this.getElementsByTagName("a")[0];
+		    		    
+    					if(heartShow.className=="fl jobb_hearts"){
+    						heartShow.className="fl jobb_hearts hide";
+    					}else{
+    						heartShow.className="fl jobb_hearts";
+    					};
+    					
+    					if(attend.className=="jobb_attent"){
+    						attend.className='jobb_attention';
+    						var jobNew=this.getElementsByClassName("jobb_new")[0];
+								attend.innerHTML='取消关注';
+								jobNew.style.display="none";
+								data[this.index].jobb_heart="true";
+    					}else if(attend.className=="jobb_attention"){
+    						attend.className="jobb_attent";
+    						attend.innerHTML='关注';
+    						data[this.index].jobb_heart="false";
+    					}
+    					
+    					
+		    		}else{
+		    			var isid=this.getAttribute('ids')//获取对应的信息id
+			    		dataRun(runIds(isid));
+					    mainBox.style.display="none";
+					    detail.style.display="block";
+					   
+		    		}
+		    	}) 	
+		    }
+	   }
+	    
+	    add_events();	
+	    
+	   /*//如果点击关注显示心形图标，关注--取消关注、取消关注--关注、new图标消失 
+	    function attent(){
+	    	    var items=Olist.getElementsByClassName('jobb_item');
+	    		//如果点击关注显示心形图标，关注--取消关注、取消关注--关注、new图标消失
+			    var eyesHeart=document.getElementsByClassName('jobb_attent');
+			    var jobb_new=document.getElementsByClassName('jobb_new');
+				
+			    for(var c=0;c<items.length;c++){	
+			    	eyesHeart[c].change=true;	
+			    	(function(c){
+			    		
+			    		eyesHeart[c].onclick=function(ev){
+			    			var ev=ev|| window.event
+			               if(this.change==true){
+								this.className='jobb_attention';
+								this.innerHTML='取消关注';
+								jobb_new[c].style.display='none';	
+								this.change=false;	
+							}else{	
+								this.className='jobb_attent';
+								this.innerHTML='关注';
+								this.change=true;	
+							}	
+			               	
+			                $(this).siblings(".jobb_hearts")
+			                
+			                
+			              ev.cancelBubble=true;//阻止冒泡 
+						};
+			    	})(c)
+			    }
+	    }
+	    attent();*/
+	    
+	    
+	     
+	    //根据id寻找索引
+	    function runIds(n){
+			for(var i=0;i<data.length;i++){
+		    	if(n==data[i].id){
+		    		return i;
+		    	}
+		    }
+		}
+		
+	    //详情页面JS代码
+	    var d_back=document.getElementById('d_back');
+	    d_back.onclick=function(){
+	    	mainBox.style.display="block";
+			detail.style.display="none";
+			d_midList.innerHTML="";
+			d_botList.innerHTML="";
+		//window.history.back(-1);
+	    }
+	
+		var d_inset=detail.getElementsByClassName('inset')[0];//公司详情按钮
+		var d_inpage=detail.getElementsByClassName('jobg_explain')[0];//公司详情页面
+		var d_close=d_inpage.getElementsByClassName("close")[0];//公司详情页面按钮
+		
+		var d_top=detail.getElementsByClassName('top')[0];//详情页top
+		var d_mid=detail.getElementsByClassName('mid')[0];//详情页主体
+		var d_midList=d_mid.getElementsByClassName('list')[0];//要求列表
+		var d_bot=detail.getElementsByClassName('bot')[0];//公司版面
+		var d_botList=d_bot.getElementsByClassName('list')[0];//公司概况列表
+		
+		//数据应用事件
+		function dataRun(n){
+			d_top.getElementsByClassName('major')[0].innerHTML=data[n].jobb_post;
+			d_top.getElementsByClassName('pay')[0].innerHTML=data[n].jobb_money;
+			d_top.getElementsByClassName('subtitle')[0].innerHTML=data[n].jobb_desc;
+			d_top.getElementsByClassName('point')[0].innerHTML=data[n].citys+' '+data[n].areas+' '+data[n].village;
+			d_top.getElementsByClassName('bag')[0].innerHTML=data[n].experience;
+					
+			//数据应用事件_bot
+			d_bot.getElementsByClassName('company')[0].innerHTML=data[n].bot.company.name;
+			d_bot.getElementsByClassName('picImg')[0].setAttribute('src',data[n].bot.company.imgurl);
+			d_bot.getElementsByClassName('insize')[0].innerHTML=data[n].bot.company.desc.type+' '+data[n].bot.company.desc.mold+' '+data[n].bot.company.desc.size;
+			
+			//要求循环生成要求
+			for(var i=0;i<data[n].mid.length;i++){
+				var cont='<p>'+(i+1)+'.'+data[n].mid[i]+'</p>';
+				d_midList.innerHTML+=cont;
+			}
+			//公司简介循环生成
+			for(var i=0;i<data[n].bot.need.length;i++){
+				var cont='<p>'+(i+1)+'.'+data[n].bot.need[i]+'</p>';
+				d_botList.innerHTML+=cont;
+			}
+		}
+		
+		//预约判断事件
+		var order=document.getElementById('order');
+		
+		//判断重复投递
+		var selNum=0;//投递次数变量
+		for(var i=0;i<user.jump.length;i++){
+			if(data[0].id==user.jump[i].id){
+				selNum=user.jump[i].number;//得到已经保存的投递次数
+			}
+		}
+		
+		if(user.days<user.ends){
+			order.innerHTML='无法预约（毕业前一周即可预约）';
+			order.className='error';
+		}
+		else if(user.mark<80){
+			order.innerHTML='无法预约（你的素质分不达标）'
+			order.className='error';
+		}
+		else if(selNum>=3){
+			order.innerHTML='无法预约（重复投递，请3日后再试）'
+			order.className='error';
+		}else{
+			order.className='right';
+			order.onclick=function(){
+				if(data[0].goodjob==false || user.jumpSum>7){
+					var check=document.getElementsByClassName('jobh_chance')[0];
+					check.style.display='block';
+					var continues=document.getElementsByClassName('button2')[0];
+					continues.onclick=function(){
+						jobb_Send();
+						check.style.display='none';
+					}
+				}else{
+					//alert('开始预约');
+					jobb_Send();
+				}
+			}
+		}
+				
+		//公司详情页事件
+		d_inset.onclick=function(){d_inpage.style.display='block'}
+		d_close.onclick=function(){d_inpage.style.display='none'}
+		//————————————————————————————杨——闭合
+		
+		
+		//点击预约的发送状态
+		function jobb_Send(){
+			 //获取三个页面
+			var sendMedal=document.getElementById('jobe-modal');
+			var show=sendMedal.getElementsByClassName("show");
+			var wait=sendMedal.getElementsByClassName("waiting")[0];
+			var success=sendMedal.getElementsByClassName("success")[0];
+			var wrong=sendMedal.getElementsByClassName("wrong")[0];
+			var modalLayal=null;
+			var m=0;
+	   		//点击关闭按钮
+	   		this.blur();
+			order.style.opacity="0.2";	   			
+			show[m].style.display="block";
+			sendMedal.className='modal'
+	   		var close=sendMedal.getElementsByClassName("close");
+	   		for(var n in close){
+	   			html.onclick=function(ev){
+	   				var ev=ev||window.event;
+	   				var elm=ev.target||ev.srcElement;
+	   				if(elm==this){return}
+	   				if(elm.className=="close"){
+	   					hide();
+	   					m++;
+	   					if(m>=3){
+	   						hide();
+	   						order.style.opacity="1";
+	   						order.focus();
+	   						//var sendMedal=jobe.getElementById('jobe-modal')
+	   			            sendMedal.className='modal_none'
+	   					}else{
+	   						show[m].style.display="block";
+	   					}
+	   				}
+	   			}	
+	   		}
+	   		//隐藏所有页面
+	   		function hide(){
+	   			for(var i=0;i<show.length;i++){
+					if(show[i].style.display=="block"){
+						show[i].style.display="none";	
+					}
+				}
+	   		}
+	   		//模态层modal_layal--------暂未使用
+			function modal_layal(){
+				var modal=document.createElement('div');
+				modal.className='modal';
+				jobe.body.appendChild(modal);
+				return modal;
+				window.onresize=function(){
+					modal_layal();	
+				};	
+			};	
+			
+		}
+		
+	</script>
+	
+</html>

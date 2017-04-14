@@ -1,0 +1,15 @@
+.main .cont .cont_c .cont_c_i{padding-top:15px;padding-left: 40px;display: none;}
+.main .cont .cont_c .cont_c_i.show{display: block;}
+.main .cont .cont_c .wenhua{padding:0 0 18px 0;}
+.main .cont .cont_c .wenhua dt{height:22px;font-weight: bolder;line-height: 22px;font-size: 13px;color:#336600;}
+.main .cont .cont_c .wenhua dd{height:20px;line-height: 20px;font-size: 12px;color:#505050;}
+.main .cont .cont_c .wenhua dd span{padding-left: 11px;color:#336600;display: inline-block;height:20px;background: url("../images/qianzhui.png") no-repeat 2px 8px;float: left;}
+
+.main .cont .cont_c .cont_c_i.lankajieshao img{width:643px;padding-right: 40px;}
+.main .cont .cont_c .cont_c_i.lankajieshao p{font-size: 12px;color:#505050;line-height: 24px;text-indent:2em;padding-right: 40px;padding-top: 20px;}
+
+.main .cont .cont_c .cont_c_i.zongcaizhici p{font-size: 12px;color:#505050;line-height: 24px;text-indent:2em;padding-right: 40px;}
+
+.main .cont .cont_c .cont_c_i.diliweizhi p{font-size: 12px;color:#505050;line-height: 24px;padding-right: 40px;}
+.main .cont .cont_c .cont_c_i.diliweizhi p span{color:#336600;}
+.main .cont .cont_c .cont_c_i.diliweizhi img{width:643px;padding-right: 40px;}

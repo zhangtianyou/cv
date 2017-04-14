@@ -1,0 +1,35 @@
+*{margin:0;padding:0;}
+ul,dl{list-style: none;}
+a{text-decoration: none;outline: none;}
+img{vertical-align: top;}
+body{font-family: arial,'Mircosoft YaHei';}
+.clearfix:after{content: "200B";display: block;height:0;font-size: 0;clear: both;}
+.header{height:41px;border:1px solid #212915;background-color:#3b4c29;}
+.header .inner{width:930px;height:41px;margin:0 auto;}
+.header ul{border-left:1px solid #212915;height:41px;width:929px;}
+.header ul li{width:102px;height:41px;border-right:1px solid #212915;float: left;}
+.header ul li:nth-child(9){width:104px;}
+.header ul li a{width:100%;height:41px;line-height: 41px;font-size: 15px;color:#fff;display: block;text-align: center;background-color: #4a6a20;}
+.header ul li a.active{background-color: #fff;color:#003300;}
+.header ul li a:hover{background-color: #fff;color:#003300;}
+
+.banner{background: url("../images/banner_bg.jpg");padding-bottom: 30px;}
+.banner .inner{width:930px;margin:0 auto;}
+.banner .top{padding-top: 20px;padding-bottom: 19px;height:62px;}
+.banner .top .logo{padding-left: 6px;float: left;display: block;}
+.banner .top .logo a img{border: 0;}
+.banner .top .tel{padding-left: 16px;padding-top:1px;padding-right:122px;float: left;}
+.banner .top .lan{width:186px;height:27px;float: left;padding-top:18px;}
+.banner .top .lan ul{width:179px;height:12px;padding:8px 0 0 7px;}
+.banner .top .lan ul li{height:12px;border-right:1px solid #b1c4a6;color: #b1c4a6;float: left;font-size: 12px;line-height: 12px;padding:0 9px;}
+.banner .top .lan ul li.active{color:#fff;}
+.banner .inner .bot{border:4px solid #6e8064;border-radius: 4px;margin-bottom: 30px;}
+
+
+.footer{height:93px;background-color: #2e3231;}
+.footer .inner{width:930px;height:93px;margin:0 auto;}
+.footer .logo_f{float: left;padding:15px 0 0 18px;}
+.footer .line{float: left;padding:6px 0 0 17px;}
+.footer .logo_f2{float: left;width:97px;text-align: center;padding-top:15px;}
+.footer .logo_f2 p{font-size: 12px;height:28px;line-height: 28px;color:#fff;}
+.footer .inner>p{float: right;text-align: right;color:#fff;font-size:12px;line-height: 18px;padding-top: 18px;padding-right:5px;}

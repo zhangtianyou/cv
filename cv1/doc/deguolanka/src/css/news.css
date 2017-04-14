@@ -1,0 +1,7 @@
+.main .cont .cont_c .cont_c_i{padding-top:23px;padding-left: 32px;width:654px;display: none;}
+.main .cont .cont_c .cont_c_i.show{display: block;}
+.main .cont .cont_c .cont_c_i ul{width:654px;height:483px;}
+.main .cont .cont_c .cont_c_i ul li{border-bottom: 1px dashed #c2bcaa;height:29px;line-height: 29px;padding-left: 15px;color:#505050;font-size: 12px;background: url("../images/arr-right.png") no-repeat 3px 11px;}
+.main .cont .cont_c .cont_c_i ul li span{float: right;color:#888888;}
+.main .cont .cont_c .cont_c_i .news_nav{float: right;font-size: 12px;color: #505050;height:39px;line-height: 39px;}
+.main .cont .cont_c .cont_c_i .news_nav span{color:#599301;}

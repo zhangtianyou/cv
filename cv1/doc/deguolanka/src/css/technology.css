@@ -1,0 +1,5 @@
+.main .cont .cont_c .cont_c_i{display: none;}
+.main .cont .cont_c .cont_c_i.show{display: block;}
+.main .cont .cont_c .cont_c_i .pic{padding:27px 0 0 14px;}
+
+.main .cont .cont_c .cont_c_i.zhilingkongzhi p{font-size: 12px;color:#505050;line-height: 24px;padding:27px 14px 0 14px;}

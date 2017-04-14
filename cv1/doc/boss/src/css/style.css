@@ -1,0 +1,930 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+input,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+img,
+input,
+textarea {
+  border: none;
+}
+img {
+  display: block;
+}
+i {
+  font-style: normal;
+  font-family: consolas;
+}
+em {
+  font-style: normal;
+}
+header,
+nav,
+section,
+aside,
+article,
+footer {
+  display: block;
+}
+input,button{ 
+	outline: none;
+	}
+.clearfix:after {
+  content: '200B';
+  height: 0;
+  font-size: 0;
+  display: block;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5;
+  font-family: "黑体", "microsoft yahei", "宋体";
+}
+.jobb_wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/*首页头部*/
+.jobb_header {
+  width: 100%;
+  height: 2.375rem;
+  background: #1bb8c5;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  top:0;
+  text-align: center;
+  line-height: 2.375rem;
+  
+}
+.jobb_header a.jobb_prev {
+  position: absolute;
+  width: 0.675rem;
+  height: 1rem;
+  top: 0.7rem;
+  left: 0.8rem;
+  color: #fff;
+}
+.jobb_header a.jobb_prev img {
+  width: 100%;
+  height: 100%;
+}
+.jobb_header a.jobb_me,
+.jobb_wrap .jobb_header a.jobb_all {
+  display: inline-block;
+  width: 50%;
+  color: #fff;
+  float: left;
+}
+.jobb_wrap .jobb_tab {
+  width: 100%;
+  height: 1.825rem;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 2.375rem;/*8888888888888888888888888888888888888888888888888888888888888888888888888888888*/
+}
+.jobb_wrap .jobb_tab .jobb_recom {
+  width: 5.975rem;
+  text-align: center;
+  float: left;
+}
+.jobb_wrap .jobb_recom a {
+  display: block;
+  font-size: 0.7rem;
+  height: 1.825rem;
+  line-height: 1.825rem;
+  position: relative;
+}
+.jobb_wrap .jobb_recom i {
+  font-size: 1rem;
+  display: inline-block;
+  color: #919191;
+  position: absolute;
+  top: 0.46rem;
+  right: 1rem;
+}
+.jobb_wrap .jobb_recom i.jobb_add {
+  display: inline-block;
+  position: absolute;
+  width: 0.65rem;
+  height: 0.85rem;
+  top: 0.4rem;
+  left: 1rem;
+}
+.jobb_wrap .jobb_recom i.jobb_add img {
+  width: 100%;
+  height: 100%;
+}
+.jobb_wrap .jobb_recom:nth-last-of-type(2) {
+  position: relative;
+}
+.jobb_wrap .jobb_recom:nth-last-of-type(2):after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 0.825rem;
+  background: #a0a0a0;
+  position: absolute;
+  top: 0.475rem;
+  left: 0;
+}
+.jobb_wrap .jobb_recom:nth-last-of-type(2):before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 0.825rem;
+  background: #a0a0a0;
+  position: absolute;
+  top: 0.475rem;
+  right: 0;
+}
+.jobb_wrap .jobb_list {
+  height: auto;
+  padding: 0 0.525rem 0 0.525rem;
+}
+.jobb_wrap .jobb_item {
+  background: #fff;
+  padding: 0.45rem;
+  margin: 0.45rem 0 0 0;
+}
+.jobb_wrap .jobb_title h1 {
+  font-size: 0.75rem;
+  color: #1bb8c5;
+  font-weight: normal;
+}
+.jobb_wrap .jobb_title span {
+  font-size: 0.6rem;
+  color: #1bb8c5;
+  margin-right: 1rem;
+}
+.jobb_wrap .jobb_title i {
+  width: 0.775rem;
+  height: 0.775rem;
+  margin-left: 0.525rem;
+}
+.jobb_wrap .jobb_title i img {
+  width: 100%;
+  height: 100%;
+}
+.jobb_wrap .jobb_item {
+  position: relative;
+}
+.jobb_wrap .jobb_item .jobb_new {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.675rem;
+  height: 1.475rem;
+}
+.jobb_wrap .jobb_item .jobb_new img {
+  width: 100%;
+  height: 100%;
+}
+.jobb_wrap .jobb_item p {
+  font-size: 0.7rem;
+  line-height: 1.5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 12rem;
+  color: #595959;
+  margin: 0.25rem 0 0.25rem 0;
+}
+.jobb_wrap .jobb_item .jobb_city {
+  width: 12rem;
+  margin-top: 0.45rem;
+}
+.jobb_wrap .jobb_item .jobb_city i {
+  width: 0.5rem;
+  height: 0.6rem;
+  display: inline-block;
+}
+.jobb_wrap .jobb_city i.jobb_experience {
+  margin-left: 0.5rem;
+}
+.jobb_wrap .jobb_city i img {
+  width: 100%;
+  height: 100%;
+}
+.jobb_wrap .jobb_city span {
+  font-size: 0.6rem;
+  display: inline-block;
+  color: #808080;
+  margin-left: 0.25rem;
+  max-width: 2.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.jobb_wrap .jobb_desc {
+  position: relative;
+}
+.jobb_wrap .jobb_desc a.jobb_attention,
+.jobb_wrap .jobb_desc a.jobb_attent,
+.jobb_attention2 {
+  width: 3.125rem;
+  height: 1.25rem;
+  background: #1bb8c5;
+  color: #fff;
+  font-size: 0.5rem;
+  text-align: center;
+  line-height: 1.25rem;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0.65rem;
+  font-family: "microsoft yahei";
+}
+.jobb_wrap .jobb_desc a.jobb_attent {
+  background: none;
+  border: 2px solid #1bb8c5;
+  color: #1bb8c5;
+}
+/*tab切换选项卡*/
+.jobk_modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: #000000;
+  opacity: 0.3;
+  display: none;
+}
+#jobk_dropList .jobk_dropDown {
+  width: 100%;
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  z-index: 10;
+}
+#jobk_dropList .jobk_dropDown p {
+  display: inline-block;
+  float: left;
+}
+#jobk_dropList .jobk_dropDown p span {
+  padding-left: 0.25rem;
+  padding-right: 12.5rem;
+  color: #1bb8c5;
+}
+#jobk_dropList .jobk_dropDownL,
+#jobk_dropList .jobk_dropDownC,
+#jobk_dropList .jobk_dropDownR {
+  display: none;
+}
+#jobk_dropList .jobk_dropDownL li {
+  width: 100%;
+  height: 2.35rem;
+  line-height: 2.35rem;
+  border-top: 1px solid #cfcfcf;
+  font-size: 0.675rem;
+  padding-left: 1.9rem;
+  background: #fff;
+  color: #919191;
+}
+
+.jobb_tab #jobk_dropList .jobk_active {
+  color: #1bb8c5;
+}
+.jobb_tab #jobk_dropList .jobk_show {
+  display: block;
+}
+#jobk_dropList .jobk_dropDownC li {
+  width: 33.3%;
+  height: 2.35rem;
+  line-height: 2.35rem;
+  font-size: 0.675rem;
+  color: #919191;
+  float: left;
+}
+#jobk_dropList .jobk_dropDownR li {
+  width: 100%;
+  height: 2.35rem;
+  line-height: 2.35rem;
+  border-top: 1px solid #cfcfcf;
+  font-size: 0.675rem;
+  padding-left: 1.125rem;
+  color: #919191;
+  background: #fff;
+}
+.jobc_region {
+  width: 18rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: row;
+  font-family: "Adobe 黑体 Std R", serif;
+}
+.jobc_city {
+  width: 100%;
+  overflow: auto;
+  background: #fff;
+}
+.jobc_city li {
+  width: 7.05rem;
+  height: 2.075rem;
+  font-size: 0.675rem;
+  line-height: 2.075rem;
+  border-bottom: 1px solid #cfcfcf;
+  text-align: center;
+  box-sizing: border-box;
+}
+.jobc_region .area_box {
+	display: none;
+  flex: 1;
+  overflow: auto;
+}
+.jobc_region .area_box ul {
+  display: none;
+}
+.jobc_region .area_box ul li {
+  width: 100%;
+  height: 2.075rem;
+  font-size: 0.675rem;
+  line-height: 2.075rem;
+  text-align: center;
+  border: 1px solid #cfcfcf;
+  border-top: none;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  background: #eeeeee;
+}
+.jobc_region .area_box ul li i {
+  position: absolute;
+}
+.jobc_dis {
+  display: block !important;
+}
+#jobk_dropList .jobk_dropDownC li.jobc_select {
+  background: #eeeeee;
+  color: #1bb7c3;
+}
+.area_select {
+  color: #1bb9c4 !important;
+}
+/*详情页*/
+/*头部区域*/
+.jobd-detail {
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5;
+  display: none;
+}
+.jobd-detail header {
+  background: #1bb8c5;
+  padding-top: 0.25rem;
+}
+.jobd-detail header .title {
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  letter-spacing: 1.38888889;
+  text-align: center;
+  color: #fefefe;
+  position: relative;
+}
+.jobd-detail header i {
+  position: absolute;
+  left: 0.725rem;
+  top: 50%;
+  width: 0.6rem;
+  margin-top: -0.5rem;
+  height: 1rem;
+}
+/*主体内容*/
+.jobd-detail section {
+  padding: 0.575rem;
+  margin-top: 2.5rem;
+}
+.jobd-detail section .item {
+  margin-bottom: 0.575rem;
+  background: white;
+  padding: 0.225rem 0.525rem 0.625rem;
+}
+/*模块*/
+.jobd-detail section .item h3 {
+  font-size: 0.75rem;
+  line-height: 1.7rem;
+  font-weight: normal;
+  color: #1bb8c5;
+}
+.jobd-detail section .item .list {
+  font-size: 0.6rem;
+  line-height: 0.925rem;
+  color: #333;
+}
+.jobd-detail section .item .list p {
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1rem;
+  width: 15.25rem;
+}
+.jobd-detail section .item span {
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+  color: #808080;
+}
+/*标题*/
+.jobd-detail section .top .title {
+  position: relative;
+}
+.jobd-detail section .top .title span {
+  position: absolute;
+  right: 0;
+  top: 0.4rem;
+  color: #1bb8c5;
+  font-size: 0.6rem;
+}
+.jobd-detail section .top .subtitle {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  color: #595959;
+}
+.jobd-detail section .top .desc span {
+  padding-left: 0.75rem;
+}
+.jobd-detail section .top .desc span.point {
+  background: url(../images/point.png) no-repeat;
+  background-size: contain;
+}
+.jobd-detail section .top .desc span.bag {
+  background: url(../images/bag.png) no-repeat;
+  background-size: contain;
+}
+.jobd-detail section .bot .company {
+  font-size: 0.7rem;
+  line-height: 1.25rem;
+  color: #595959;
+}
+.jobd-detail section .bot .desc {
+  position: relative;
+  padding-bottom: 0.65rem;
+}
+.jobd-detail section .bot .desc .text {
+  position: absolute;
+  left: 3.25rem;
+  top: 0;
+}
+.jobd-detail section .bot .desc .pic {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.jobd-detail section .bot .desc .pic img {
+  width: 100%;
+  border-radius: 50%;
+}
+.jobd-detail section .bot .desc i {
+  position: absolute;
+  right: 0;
+  top: 0.55rem;
+  width: 0.75rem;
+  height: 1.45rem;
+}
+.jobd-detail section .right {
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  height: 2.1rem;
+  letter-spacing: 1.38888889;
+  text-align: center;
+  color: #fefefe;
+  background: #1bb8c5;
+}
+.jobd-detail section .error {
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  height: 2.1rem;
+  letter-spacing: 1.38888889;
+  text-align: center;
+  color: #fefefe;
+  background: #919191;
+}
+/*弹出页面*/
+#jobg_explain {
+  display: none;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000000;
+  background: rgba(0, 0, 0, 0.5);
+}
+#jobg_explain .close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.4rem;
+  font-size: 1.25rem;
+  display: inline-block;
+  color: #1bb8c5;
+}
+#jobg_explain .company_id {
+  line-height: 100%;
+  z-index: 20;
+  background-color: #FFFFFF ;
+  height: 4.575rem;
+  width: 100%;
+  position: relative;
+}
+.jobg_Box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#jobg_explain .company_id .company_logo {
+  height: 3.25rem;
+  width: 3.25rem;
+  background-size: cover;
+  position: absolute;
+  left: 1.15rem;
+  top: 0.9rem;
+}
+#jobg_explain .company_id .company_logo img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+#jobg_explain .company_id .company_instruct {
+  padding-left: 5rem;
+  padding-top: 0.925rem;
+}
+#jobg_explain .company_id .company_instruct span {
+  line-height: 1.125rem;
+  display: block;
+  color: #595959;
+  font-size: 0.7rem;
+}
+#jobg_explain .company_id .company_instruct .tel_num,
+#jobg_explain .company_id .company_instruct .teacher_name {
+  display: inline-block;
+  color: #1bb8c5;
+}
+#jobg_explain .company_id .company_instruct p {
+  display: inline-block;
+  color: #808080;
+  font-size: 0.6rem;
+}
+#jobg_explain .position_intro {
+  background-color: #FFFFFF;
+  min-height: 8.6rem;
+  width: 100%;
+  padding: 0.5rem 1.2rem;
+  box-sizing: border-box;
+  border-bottom: 0.5rem #e6e6e6 solid;
+}
+#jobg_explain .company_intro {
+  background-color: #FFFFFF;
+  min-height: 9rem;
+  width: 100%;
+  padding: 0.5rem 1.2rem;
+  box-sizing: border-box;
+}
+#jobg_explain .position_intro h2,
+#jobg_explain .company_intro h2 {
+  font-size: 0.8rem;
+  line-height: 1.475rem;
+  padding-bottom: 0.25rem;
+  font-weight: normal;
+}
+#jobg_explain .position_intro .require_list,
+#jobg_explain .company_intro .company_list {
+  font-size: 0.6rem;
+  line-height: 1.05rem;
+}
+#jobg_explain .position_intro .require_list li,
+#jobg_explain .company_intro .company_list li {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 15.5rem;
+}
+.jobd-detail header i img {
+  width: 100%;
+  height: 100%;
+}
+.jobd-detail section .bot .desc i img {
+  width: 100%;
+  height: 100%;
+}
+.jobd-detail section .error {
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  height: 2.1rem;
+  letter-spacing: 1.38888889;
+  text-align: center;
+  color: #fefefe;
+  background: #919191;
+}
+.pic {
+  font-size: 0;
+}
+#jobe-modal {
+  width: 100%;
+  height: 100%;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
+  opacity: 0.9;
+}
+.modal_none {
+  opacity: 0;
+}
+#jobe-modal .show {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 11rem;
+  text-align: center;
+  color: #15919b;
+  display: none;
+  position: relative;
+  z-index: 100;
+}
+#jobe-modal .show .pic {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  background-image: url(../images/waiting.png);
+  background-size: cover;
+  animation: rotate 2s linear;
+  animation-iteration-count: 6;
+}
+#jobe-modal .waiting .pic {
+  background-image: url(../images/waiting.png);
+}
+#jobe-modal .success .pic {
+  background-image: url(../images/success.png);
+  animation: none;
+}
+#jobe-modal .wrong .pic {
+  background-image: url(../images/wrong.png);
+  animation: none;
+}
+#jobe-modal .show .hint {
+  font-family: "黑体", "微软雅黑";
+  font-size: 1.1rem;
+  line-height: 1.75rem;
+  padding-top: 0.5rem;
+}
+#jobe-modal .wrong .hint {
+  color: #990000;
+}
+#jobe-modal .show .desc {
+  font-family: "黑体", "微软雅黑";
+  font-size: 0.9rem;
+  line-height: 1.35rem;
+}
+#jobe-modal .wrong .desc {
+  color: #990000;
+}
+#jobe-modal .show .close {
+  padding-top: 2.125rem;
+  height: 1.75rem;
+  font-family: "宋体", "微软雅黑";
+  font-size: 2rem;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/*头部*/
+.jobh_wrap .jobh_header {
+  width: 100%;
+  height: 2.375rem;
+  background: #1bb8c5;
+  font-size: 0.9rem;
+  position: relative;
+  text-align: center;
+  line-height: 2.375rem;
+}
+.jobh_wrap .jobh_header a.jobh_prev {
+  position: absolute;
+  width: 0.675rem;
+  height: 1rem;
+  top: 0.7rem;
+  left: 0.8rem;
+  color: #fff;
+}
+.jobh_wrap .jobh_header a.jobh_prev img {
+  width: 100%;
+  height: 100%;
+}
+.jobh_wrap .jobh_header a.jobh_caption {
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+  float: left;
+}
+.jobh_chance {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.jobh_chance .model {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.jobh_chance .content {
+  height: 7.5rem;
+  color: #FFFFFF;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.jobh_chance .content .button2,
+.jobh_chance .content .button1 {
+  width: 4.35rem;
+  height: 1.8rem;
+  background: #1cb8c5;
+  display: inline-block;
+  line-height: 1.8rem;
+  font-size: 0.75rem;
+  margin: 0 0.75rem;
+}
+.jobh_chance .content p {
+  font-family: '微软雅黑';
+  font-size: 0.75rem;
+  width: 100%;
+  line-height: 1.675rem;
+  margin-bottom: 0.95rem;
+}
+.jobh_chance .content span {
+  font-size: 2.95rem;
+  background: #61b0b5;
+  display: inline-block;
+  height: 4.075rem;
+  line-height: 4.075rem;
+  width: 4.075rem;
+  border-radius: 50% ;
+  font-family: '微软雅黑';
+  margin-bottom: 0.65rem;
+}
+.joba_head {
+  overflow: hidden;
+  width: 18rem;
+  height: 100%;
+  margin-top: 0.75rem;
+  background: #545;
+}
+.joba_me {
+  width: 18rem;
+  height: 100%;
+  background: #e5e5e5;
+}
+.joba_nav {
+  height: 1.825rem;
+  width: 18rem;
+  background: #ffffff;
+  position: absolute;
+  top: 2.375rem;
+  left: 0;
+}
+.joba_list {
+  width: 4.35rem;
+  padding: 0 0.15rem;
+  height: 0.825rem;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+  border-right: 1px solid #554455 ;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+}
+.joba_list span {
+  display: block;
+  font-size: 0.7rem;
+  line-height: 0.825rem;
+  height: 0.825rem;
+  color: #554455;
+  padding-bottom: 0.45rem;
+}
+.joba_list_last {
+  border-right: #FFFFFF ;
+}
+.joba_list:hover span {
+  color: #1bb8c5;
+  border-bottom: 3px solid skyblue;
+}
+.joba_main {
+  width: 18rem;
+  background: #e5e5e5;
+}
+.joba_one {
+  width: 18rem;
+}
+.joba_icon {
+  margin: 11rem 6.5rem 0 6.5rem;
+  width: 5rem;
+  height: 4.375rem;
+  text-align: center;
+}
+.joba_icon img {
+  width: 5rem;
+  height: 4.375rem;
+}
+.joba_p {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+  width: 18rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a2a2a2;
+  height: 2.5rem;
+  line-height: 1.25rem;
+}
+.hide {
+  display: none;
+}
+.joba_btn {
+  margin: 0 6rem;
+  background: #1BB8C5;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  width: 5.825rem;
+  height: 1.825rem;
+  text-align: center;
+  border: none;
+  font-family: "黑体";
+}
+.jobb_wrap #wrapper{
+	position: absolute;
+	left: 0;
+	top: 4.2rem;
+	width: 100%;
+	height: 27.7rem;
+	box-sizing: border-box;
+	overflow: auto;
+}
+#pullUp{
+	background:transparent;
+	height:1rem;
+	line-height:1rem;
+	font-size:0.3rem;
+	color:#7B0A2E;
+	text-align: center;
+	z-index: 10;
+	padding:0.5rem 0;
+}
+#scroller {
+	width: 100%;
+	box-sizing: border-box;
+	position:relative; 
+	overflow: auto;
+}
+.hide{
+	display: none;
+}
+
+
+
+

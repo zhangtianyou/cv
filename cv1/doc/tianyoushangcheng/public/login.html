@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+        <style>
+            body {
+                background-color: #333;
+            }
+            .background {
+                background: url("images/w24.jpg")  no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .text-frame {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .text-inner {
+                width: 600px;
+                margin: 15% auto auto auto;
+                background-color: rgba(0, 0, 0, 0.78);
+                padding: 20px;
+                color: #E1E1E1;
+                border-radius: 5px;
+            }
+            .form-signin {
+                max-width: 380px;
+                padding: 15px 35px 45px;
+                margin: 0 auto;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+                margin-bottom: 30px;
+            }
+            .form-signin .checkbox {
+                font-weight: normal;
+            }
+            .form-signin .form-control {
+                position: relative;
+                font-size: 16px;
+                height: auto;
+                padding: 10px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+            .form-signin input[type="text"] {
+                margin-bottom: -1px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .form-signin input[type="password"] {
+                margin-bottom: 20px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        </style>
+        <script src="js/jquery-3.1.0.js"></script>
+        <script>
+            $(function(){
+                //背景图的切换
+                var images=["w24.jpg","w25.jpg","w26.jpg","w27.jpg","w28.jpg"];
+                var index=1;//因为第一张他是有的，所以下一张从二开始
+                var $bg=$("div.background");
+                setInterval(function(){
+                    if(index==images.length)index=0;
+                    $bg.animate({"opacity":0},1500,function(){
+                        $bg.css("backgroundImage", 'url("images/'+images[index]+'")')
+                                .animate({"opacity":1},1500)
+                        index++;
+                    })
+                },5000)
+                //-----登陆框的验证
+                 var btn1=$('#btn1');
+                var btn2=$('#btn2');
+                function open1(){
+                    var username=$('.form-signin>input[name="username"]').val();
+                    var password=$('.form-signin>input[name="password"]').val();
+                    if( username =="" || password == ""){
+                        alert("请输入密码")
+                    }else {
+                       window.open('client.html');
+                    }
+                }
+                function open2(){
+                    var username=$('.form-signin>input[name="username"]').val();
+                    var password=$('.form-signin>input[name="password"]').val();
+                    if( username =="" || password == ""){
+                        alert("请输入密码")
+                    }else {
+                        window.open('service.html');
+                    }
+                }
+                btn1.click(open1);
+                btn2.click(open2);
+            })
+        </script>
+    </head>
+    <body>
+        <div class="background"></div>
+
+        <div class="text-frame">
+            <div class="text-inner">
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">Please login</h2>
+                    <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+                    <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+                    </label>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" id="btn1" >客户登陆</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" id="btn2">工作人员</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

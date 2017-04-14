@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{background: url("./images/w24.jpg") no-repeat;}
+        .personal{padding: 5px;}
+    </style>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function () {
+            // 和socket服务器建立连接，获得客户端的socket对象
+            // 连接服务器。这将从被加载的页面向服务器发送连接请求，
+            // 最终在服务器端socketio中触发connection事件
+            var clientSocket = io();
+
+            // 生成一个随机客户id，发送给服务器
+            var customerId = "客户" + (Math.ceil(1000 + Math.random() * 100));
+            // 将客户id显示在界面上
+            $("#cid").text(customerId);
+
+            // 向server socket发送消息
+            clientSocket.send({type: "enter", cid: customerId});
+
+            // 在咨询窗口显示欢迎信息
+            var welcome = "<div>[客户须知]：欢迎咨询。您有什么问题?</div>";
+            $("#messages").append(welcome);
+
+            // 客户端socket监听服务器发过来的消息
+            clientSocket.on("message", function (data) {
+                var cid = data.cid;
+                if (cid == customerId) {
+                    // 说明这个消息是发送给自己的
+                    var msg = "<div>[客服]：" + data.msg + "</div>";
+
+                    // 将消息显示在咨询窗口
+                    $("#messages").append(msg);
+                    // 窗口自动向下滚动
+                    $("#messages").scrollTop($("#messages").prop("scrollHeight"));
+                }
+            });
+
+            // 发送咨询内容
+            $("#send").on("click", function () {
+                // 获取用户输入的咨询内容
+                var content = $("#message").val();
+                // ......
+                // 敏感词过滤
+
+                // 构造要发送的信息的数据结构
+                var data = {
+                    type: "咨询",
+                    cid:customerId,
+                    msg: content
+                };
+                clientSocket.send(data);
+
+                // 将咨询内容追加到界面上
+                $('#messages').append("<div class='personal'>" + content + "</div>");
+                // 窗口自动向下滚动
+                $("#messages").scrollTop($("#messages").prop("scrollHeight"));
+                $("#message").val(null);    // 清空输入框
+            });
+
+            // 当按下Enter键时，触发send按钮的click事件
+            $('#message').keydown(function (e) {
+                if (e.keyCode == 13) {  // 如果是按下的Enter键
+                    //模拟点击send按钮，触发上面的 Click 事件
+                    $("#send").click();
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <a href="/"><img src="images/jd.gif" width="100"/></a>
+</div>
+
+<div class="bg-info">
+    <div class="container">
+        <nav class="navbar navbar-default <!--navbar-fixed-top-->" role="navigation">
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="title text-center">京东在线客服系统</h3>
+    <div class="panel panel-info">
+        <div class="panel-heading">正在和客服通话。您的id是：<span id="cid"></span></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="messages"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-11"><input type="text" id="message" class="form-control"/></div>
+                <div class="col-md-1">
+                    <button class="btn btn-info" id="send">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

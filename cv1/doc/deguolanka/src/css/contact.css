@@ -1,0 +1,6 @@
+.main .cont .cont_c .cont_c_i{padding:31px 0 0 32px;}
+.main .cont .cont_c .cont_c_i .contact{padding-left:9px;padding-bottom:27px;margin-bottom: 12px;border-bottom: 1px dashed #c2bcaa;}
+.main .cont .cont_c .cont_c_i .contact:nth-child(2){border-bottom: none;}
+.main .cont .cont_c .cont_c_i .contact .com{height:38px;line-height: 38px;color:#21630d;font-size: 13px;}
+.main .cont .cont_c .cont_c_i .contact .com span{height:28px;width:28px;background: url("../images/hongkong.png") no-repeat;margin: 4px 5px 0 0;display: inline-block;float: left;}
+.main .cont .cont_c .cont_c_i .contact li{line-height: 24px;height:24px;color:#505050;font-size: 12px;}
