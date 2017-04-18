@@ -29,7 +29,7 @@ window.onload = function(){
             title:'响应式布局(理财猫)',
             time:'December 2016',
             text:['1,使用定位、浮动等原理完成基本页面布局','2,主要通过媒体查询来控制页面变化','3,兼容IE8低版本','4,pc端，手机端，平板，三套自适应'],
-            link:'../doc/licaimao/src/index.html'
+            link:'../doc/licaibao/src/index.html'
         },{
             pic:"images/zhaopin.jpg",
             title:'移动端页面（仿boss直聘）',
