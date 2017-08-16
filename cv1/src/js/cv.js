@@ -23,7 +23,7 @@ window.onload = function(){
             title:'PC端京东仿站',
             time:'December 2016',
             text:['1,使用定位、浮动等原理完成页面布局','2,使用原生JS处理页面中主要的JS效果','3,后使用jquery，angular进行过改版个别功能'],
-            link:'https://zhangtianyou.github.io/JD/'
+            link:'https:zhangtianyou.github.io/JD/'
         },{
             pic:"images/licaibao.jpg",
             title:'响应式布局(理财猫)',
